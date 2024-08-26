@@ -1,11 +1,9 @@
-import { Login } from "./pages/login"
+import { Outlet } from "react-router-dom"
 
-function App() {
+export function Layout() {
   return (
     <div className="w-screen h-screen flex justify-center items-center">
-      <Login/>
+      <Outlet/>
     </div>
   )
 }
-
-export default App
