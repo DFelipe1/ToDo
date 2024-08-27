@@ -8,12 +8,17 @@ import './global.css'
 import { Layout } from './Layout';
 import { Login } from './pages/login';
 import { Register } from './pages/register';
+import { Home } from './pages/home';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout/>,
     children: [
+      {
+        path: "/",
+        element: <Home/>,
+      },
       {
         path: "/login",
         element: <Login/>,
