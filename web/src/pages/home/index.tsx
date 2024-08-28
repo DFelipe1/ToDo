@@ -1,7 +1,11 @@
+import { Task } from "@/components/task";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
-import { MoreHorizontal } from "lucide-react";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { tasks } from "@/server/data";
 
 export function Home() {
     return (
@@ -19,31 +23,53 @@ export function Home() {
             </header>
 
             <main className="w-full">
-                <div className="w-full flex justify-end">
-                    <Button>
-                        criar tarefa
-                    </Button>
-                </div>
+                
               <div className="w-full space-y-5">
-                <div className="w-full flex gap-6 items-center">
-                    <Checkbox className="w-5 h-5"/>
-
+                <div className="w-full flex justify-between items-center">
                     <strong>Tarefas</strong>
+                    <Dialog>
+                        <DialogTrigger>
+                            <Button>
+                                <span>Criar tarefa</span>
+                            </Button>
+                        </DialogTrigger>
+                        <DialogContent className="space-y-5">
+                            <DialogHeader>
+                                <DialogTitle>Crie o que vai fazer</DialogTitle>
+                                <DialogDescription>
+                                    Descreva qual tarefa você ira fazer hoje
+                                </DialogDescription>
+                            </DialogHeader>
+
+                            <form className="space-y-5 outline-none" action="">
+                                <div className="space-y-2">
+                                    <Label>
+                                        titulo:
+                                    </Label>
+                                    <Input/>
+                                </div>
+
+                                <div className="space-y-2">
+                                    <Label>
+                                        description:
+                                    </Label>
+                                    <Textarea className="resize-none"/>
+                                </div>
+
+                                <div className="w-full flex gap-4">
+                                    <DialogClose asChild>
+                                        <Button className="w-full" variant={'outline'}>Cancelar</Button>
+                                    </DialogClose>
+                                    <Button className="w-full" >Criar</Button>
+                                </div>
+                            </form>
+                        </DialogContent>
+                    </Dialog>
                 </div>
                 <div className="w-full">
-                    <div className="w-full p-2 flex justify-between items-center">
-                        <div className="w-full flex gap-6 items-center">
-                            <Checkbox/>
-
-                            <div className="flex flex-col gap-y-0.5">
-                                <strong className="text-bas font-medium leading-none">AAAA</strong>
-                                <span className="text-sm font-normar leading-tight">AAAA</span>
-                            </div>
-                        </div>
-
-                        <MoreHorizontal size={20}/>
-
-                    </div>
+                    {tasks.map((task, index) => (
+                        <Task key={index} title={task.title} description={task.description} checked={task.completed} />
+                    ))}
                     
                 </div>
               </div>
