@@ -1,0 +1,20 @@
+# @name create-user
+GET  http://localhost:3333/
+Content-Type: application/json
+
+###
+# @name get-user
+GET  http://localhost:3333/user/99cca565-5a65-499f-9286-401ad9fad43e
+Content-Type: application/json
+
+
+###
+# @name create-user
+POST http://localhost:3333/user
+content-type: application/json
+
+{
+    "email": "felipe.de@gmail.com",
+    "password": "12345678",
+    "name": "felipe"
+}
