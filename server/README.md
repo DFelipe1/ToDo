@@ -116,8 +116,8 @@ Certifique que esses dados estão salvos no servidor para a requisição funcion
 **REQUEST**
 ```json
 {
-  "username": "fernandakipper",
-  "password": "4444444"
+    "email": "felipe.de@gmail.com",
+    "password": "12345678"
 }
 ```
 
