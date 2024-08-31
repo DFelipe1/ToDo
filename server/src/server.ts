@@ -12,10 +12,6 @@ const app: Application = express();
 app.use(cors({ origin: "*" }));
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
-
 app.post('/user', create)
 app.delete('/user/:id', deleteUser)
 

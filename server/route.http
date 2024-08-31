@@ -1,13 +1,3 @@
-# @name create-user
-GET  http://localhost:3333/
-Content-Type: application/json
-
-###
-# @name get-user
-GET  http://localhost:3333/user/99cca565-5a65-499f-9286-401ad9fad43e
-Content-Type: application/json
-
-
 ###
 # @name create-user
 POST http://localhost:3333/user
@@ -55,7 +45,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhYmU0M2UxL
 }
 
 ###
-# @name gate-all-tasks
+# @name get-all-tasks
 GET  http://localhost:3333/task
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhYmU0M2UxLTJlZjYtNDQ0Ni04M2IwLWVmOWI1MmM0YTFkNiIsIm5hbWUiOiJmZWxpcGUiLCJlbWFpbCI6ImZlbGlwZS5kZUBnbWFpbC5jb20iLCJpYXQiOjE3MjUxMjg1MjAsImV4cCI6MTcyNTE1MDEyMH0.U0q6YDB6QzrFpCDrdEVm2YvfZz_QM6o2ZDzzfaTpshw
 
@@ -79,6 +69,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhYmU0M2UxL
 
 ###
 # @name delete-task
-DELETE    http://localhost:3333/task/e49cb642-797e-444f-9e80-8551530ae29b
+DELETE    http://localhost:3333/task/42345ee2-168e-47e8-a692-98b04b93d37a
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhYmU0M2UxLTJlZjYtNDQ0Ni04M2IwLWVmOWI1MmM0YTFkNiIsIm5hbWUiOiJmZWxpcGUiLCJlbWFpbCI6ImZlbGlwZS5kZUBnbWFpbC5jb20iLCJpYXQiOjE3MjUxMjg1MjAsImV4cCI6MTcyNTE1MDEyMH0.U0q6YDB6QzrFpCDrdEVm2YvfZz_QM6o2ZDzzfaTpshw

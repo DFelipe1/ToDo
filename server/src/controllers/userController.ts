@@ -33,7 +33,7 @@ export async function deleteUser(req: Request, res: Response){
         const userId = req.params.id
         await deleteUserRepository(userId)
 
-        res.status(200)
+        res.status(200).json({ "message": "usuário deletado com sucesso"})
     } catch (error) {
         res.status(400).send(error)
     }
