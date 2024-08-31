@@ -6,7 +6,7 @@ interface createRepositoryProps{
     password: string
 }
 
-export async function createRepository({name, email, password}: createRepositoryProps) {
+export async function createUserRepository({name, email, password}: createRepositoryProps) {
     const user = await prisma.user.create({
         data: {
             email: email,
@@ -18,6 +18,23 @@ export async function createRepository({name, email, password}: createRepository
             email: true,
             name: true,
             password: false
+        }
+    })
+
+    return user
+}
+
+export async function deleteUserRepository(id: string){
+
+    await prisma.task.deleteMany({
+        where: {
+            authorId: id
+        }
+    })
+    
+    const user = await prisma.user.delete({
+        where: {
+            id: id
         }
     })
 

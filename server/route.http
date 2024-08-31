@@ -18,3 +18,67 @@ content-type: application/json
     "password": "12345678",
     "name": "felipe"
 }
+
+###
+# @name delete-user
+DELETE http://localhost:3333/user/7119818b-d420-4dba-a244-751c0b56308f
+
+###
+# @name authenticate
+POST http://localhost:3333/login
+content-type: application/json
+
+{
+    "email": "felipe.de@gmail.com",
+    "password": "12345678"
+}
+
+###
+# @name validate
+POST http://localhost:3333/validate
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhYmU0M2UxLTJlZjYtNDQ0Ni04M2IwLWVmOWI1MmM0YTFkNiIsIm5hbWUiOiJmZWxpcGUiLCJlbWFpbCI6ImZlbGlwZS5kZUBnbWFpbC5jb20iLCJpYXQiOjE3MjUxMjg1MjAsImV4cCI6MTcyNTE1MDEyMH0.U0q6YDB6QzrFpCDrdEVm2YvfZz_QM6o2ZDzzfaTpshw"
+}
+
+###
+# @name create-task
+POST http://localhost:3333/task
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhYmU0M2UxLTJlZjYtNDQ0Ni04M2IwLWVmOWI1MmM0YTFkNiIsIm5hbWUiOiJmZWxpcGUiLCJlbWFpbCI6ImZlbGlwZS5kZUBnbWFpbC5jb20iLCJpYXQiOjE3MjUxMjg1MjAsImV4cCI6MTcyNTE1MDEyMH0.U0q6YDB6QzrFpCDrdEVm2YvfZz_QM6o2ZDzzfaTpshw
+
+
+{
+    "title": "Nadar na piscina",
+    "description": "nadar para relaxar e treinar para o triato"
+}
+
+###
+# @name gate-all-tasks
+GET  http://localhost:3333/task
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhYmU0M2UxLTJlZjYtNDQ0Ni04M2IwLWVmOWI1MmM0YTFkNiIsIm5hbWUiOiJmZWxpcGUiLCJlbWFpbCI6ImZlbGlwZS5kZUBnbWFpbC5jb20iLCJpYXQiOjE3MjUxMjg1MjAsImV4cCI6MTcyNTE1MDEyMH0.U0q6YDB6QzrFpCDrdEVm2YvfZz_QM6o2ZDzzfaTpshw
+
+###
+# @name update-task
+PUT   http://localhost:3333/task/311dd030-3c03-4465-92ab-af384dd05f08
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhYmU0M2UxLTJlZjYtNDQ0Ni04M2IwLWVmOWI1MmM0YTFkNiIsIm5hbWUiOiJmZWxpcGUiLCJlbWFpbCI6ImZlbGlwZS5kZUBnbWFpbC5jb20iLCJpYXQiOjE3MjUxMjg1MjAsImV4cCI6MTcyNTE1MDEyMH0.U0q6YDB6QzrFpCDrdEVm2YvfZz_QM6o2ZDzzfaTpshw
+
+
+{
+    "title": "Integrar o back no front",
+    "description": "é de estrema necessidade fazer isso"
+}
+
+###
+# @name toggle-task
+PATCH   http://localhost:3333/task/toggle-checked/311dd030-3c03-4465-92ab-af384dd05f08
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhYmU0M2UxLTJlZjYtNDQ0Ni04M2IwLWVmOWI1MmM0YTFkNiIsIm5hbWUiOiJmZWxpcGUiLCJlbWFpbCI6ImZlbGlwZS5kZUBnbWFpbC5jb20iLCJpYXQiOjE3MjUxMjg1MjAsImV4cCI6MTcyNTE1MDEyMH0.U0q6YDB6QzrFpCDrdEVm2YvfZz_QM6o2ZDzzfaTpshw
+
+###
+# @name delete-task
+DELETE    http://localhost:3333/task/e49cb642-797e-444f-9e80-8551530ae29b
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhYmU0M2UxLTJlZjYtNDQ0Ni04M2IwLWVmOWI1MmM0YTFkNiIsIm5hbWUiOiJmZWxpcGUiLCJlbWFpbCI6ImZlbGlwZS5kZUBnbWFpbC5jb20iLCJpYXQiOjE3MjUxMjg1MjAsImV4cCI6MTcyNTE1MDEyMH0.U0q6YDB6QzrFpCDrdEVm2YvfZz_QM6o2ZDzzfaTpshw

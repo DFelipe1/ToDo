@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { createRepository } from '../repositories/userRepository';
+import { createUserRepository, deleteUserRepository } from '../repositories/userRepository';
 import { z } from "zod";
 import jwt from 'jsonwebtoken'
 
@@ -12,7 +12,7 @@ export  async function create(req: Request, res: Response){
         });
         const {name, email, password} = User.parse(req.body);
     
-        const user = await createRepository({name, email, password})
+        const user = await createUserRepository({name, email, password})
 
         const token = jwt.sign(
             { id: user.id, name: req.body.name, email: req.body.email},
@@ -26,4 +26,15 @@ export  async function create(req: Request, res: Response){
         res.status(400).send(error)
     }
         
+}
+
+export async function deleteUser(req: Request, res: Response){
+    try {
+        const userId = req.params.id
+        await deleteUserRepository(userId)
+
+        res.status(200)
+    } catch (error) {
+        res.status(400).send(error)
+    }
 }
