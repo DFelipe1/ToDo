@@ -63,9 +63,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhYmU0M2UxL
 
 ###
 # @name toggle-task
-PATCH   http://localhost:3333/task/toggle-checked/311dd030-3c03-4465-92ab-af384dd05f08
+PATCH   http://localhost:3333/task/toggle-checked/0396e4a3-0d3b-44cf-829c-e52cd97c6a87
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhYmU0M2UxLTJlZjYtNDQ0Ni04M2IwLWVmOWI1MmM0YTFkNiIsIm5hbWUiOiJmZWxpcGUiLCJlbWFpbCI6ImZlbGlwZS5kZUBnbWFpbC5jb20iLCJpYXQiOjE3MjUxMjg1MjAsImV4cCI6MTcyNTE1MDEyMH0.U0q6YDB6QzrFpCDrdEVm2YvfZz_QM6o2ZDzzfaTpshw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhYmU0M2UxLTJlZjYtNDQ0Ni04M2IwLWVmOWI1MmM0YTFkNiIsIm5hbWUiOiJmZWxpcGUiLCJlbWFpbCI6ImZlbGlwZS5kZUBnbWFpbC5jb20iLCJpYXQiOjE3MjU0NTAwNzIsImV4cCI6MTcyNTQ3MTY3Mn0.0CkXlqMJQLMMMCEMI4dT1EczJeLIVfd6Og0Pt8OR-sQ
 
 ###
 # @name delete-task
