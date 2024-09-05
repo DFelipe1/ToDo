@@ -9,6 +9,7 @@ import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { api } from "@/server/api";
+import { useNavigate } from "react-router-dom";
 
 interface TaskProps {
     id: string
@@ -22,7 +23,12 @@ export function Task({ id, title, description, checked= false }: TaskProps) {
     const [ isChecked, setIsChecked ] = useState<CheckedState>(checked)
     const [newTitle, setNewTitle] = useState('')
     const [newDescription, setNewDescription] = useState('')
-    const {token}= JSON.parse(localStorage.getItem("ToDo-App"))
+    const { token } = JSON.parse(localStorage.getItem("ToDo-App") || "{}")
+    const navigate = useNavigate()
+
+    if(!token){
+        navigate("/")
+    }
 
     async function handleCompletedTask() {
         const {data} = await api.patch(`/task/toggle-checked/${id}`, {}, {

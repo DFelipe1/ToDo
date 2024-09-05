@@ -34,7 +34,11 @@ export function Home() {
     const [description, setDescription] = useState('')
     const navigate = useNavigate()
     
-    const {token} = JSON.parse(localStorage.getItem("ToDo-App"))
+    const { token } = JSON.parse(localStorage.getItem("ToDo-App") || "{}")
+
+    if(!token){
+        navigate("/")
+    }
 
     async function getDataUser(){
 
