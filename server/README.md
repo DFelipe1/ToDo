@@ -2,7 +2,7 @@
 
 <p align="center">
     <a href="#tech">Tecnologias</a> • 
-    <a href="#started">Introdução</a> • 
+    <a href="#started">Minhas Experiências</a> • 
     <a href="#routes">API Endpoints</a> •
     <a href="#author">Autor</a> •
 </p>
@@ -17,10 +17,19 @@
 - Typescript
 - Express
 - Prisma
+- jsonwebtoken
+- zod
+- cors
 
-<h2 id="started">🚀 Introdução</h2>
+<h2 id="started">🚀 Minha Experiência</h2>
 
-A principio esse projeto é para o teste técnico da Jack Expert.
+Estou extremamente feliz por ter conseguido chegar aonde cheguei em poucos dias no desenvolvimento do back-end. Não tenho muita prática e experiência nessa parte do projeto, mas tenho alguma familiaridade por causa de cursos que já fiz, além de muita força de vontade para aprender.
+
+Para a criação do banco de dados e de todo o CRUD, escolhi usar o `prisma` por ser basicamente mais rápido para desenvolver e mais prático para mim, já que é em JavaScript. Essa ferramenta me oferece uma boa performance, pois facilita muitas tarefas do CRUD.
+
+Com isso, eu só precisei pegar os dados necessários, tratá-los e enviá-los para o BD. Utilizei o `zod` para validar e tratar os tipos dos dados.
+
+
 
 <h3>Pré-requisitos</h3>
 
@@ -87,6 +96,7 @@ Certifique que esses dados estão salvos no servidor para a requisição funcion
 
 ```json
 {
+  "name": "your-name",
   "email": "email@gmail.com",
   "password": "12345678"
 }
@@ -124,7 +134,7 @@ Certifique que esses dados estão salvos no servidor para a requisição funcion
 **RESPONSE**
 ```json
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhYmU0M2UxLTJlZjYtNDQ0Ni04M2IwLWVmOWI1MmM0YTFkNiIsIm5hbWUiOiJmZWxpcGUiLCJlbWFpbCI6ImZlbGlwZS5kZUBnbWFpbC5jb20iLCJpYXQiOjE3MjUxMjg1MjAsImV4cCI6MTcyNTE1MDEyMH0.U0q6YDB6QzrFpCDrdEVm2YvfZz_QM6o2ZDzzfaTpshw"
+    "token": "[token]"
 }
 ```
 
@@ -133,7 +143,7 @@ Certifique que esses dados estão salvos no servidor para a requisição funcion
 **REQUEST**
 ```json
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhYmU0M2UxLTJlZjYtNDQ0Ni04M2IwLWVmOWI1MmM0YTFkNiIsIm5hbWUiOiJmZWxpcGUiLCJlbWFpbCI6ImZlbGlwZS5kZUBnbWFpbC5jb20iLCJpYXQiOjE3MjUxMjg1MjAsImV4cCI6MTcyNTE1MDEyMH0.U0q6YDB6QzrFpCDrdEVm2YvfZz_QM6o2ZDzzfaTpshw"
+    "token": "[token]"
 }
 ```
 
