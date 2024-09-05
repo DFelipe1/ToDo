@@ -21,7 +21,7 @@ export  async function create(req: Request, res: Response){
         )
 
     
-        res.status(200).send({user, token})
+        res.status(201).send({user, token})
     } catch (error) {
         res.status(400).send(error)
     }

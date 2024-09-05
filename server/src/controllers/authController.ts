@@ -27,7 +27,7 @@ export async function authenticate(req: Request, res: Response){
                 process.env.TOKEN_KEY || "aaaaa",
                 { expiresIn: '6h'}
             )
-            res.status(201).send({token})
+            res.status(202).send({token})
         } else {
             return res.status(401).json({ message: 'Usuário e/ou senha incorretos'})
             
@@ -46,7 +46,7 @@ export function validate(req: Request, res: Response){
         }
 
         const decode = jwt.decode(req.body.token)
-        res.status(200).send(decode)
+        res.status(202).send(decode)
     } catch (error) {
         res.status(401).send(error)
     }

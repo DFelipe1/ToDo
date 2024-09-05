@@ -16,9 +16,9 @@ export async function createTask(req: Request, res: Response){
 
         const task = await createTaskRepository(title, description, user.id)
 
-        res.status(200).send(task)
+        res.status(201).send(task)
     } catch (error) {
-        res.status(401).send(error)
+        res.status(400).send(error)
     }
 }
 
@@ -34,7 +34,7 @@ export async function getAllTasks(req: Request, res: Response){
 
         res.status(200).send(tasks)
     } catch (error) {
-        res.status(401).send(error)
+        res.status(400).send(error)
     }
 }
 
@@ -70,7 +70,7 @@ export async function toggleCheckTask(req: Request, res: Response){
 
         const isCompleted = await checkTaskRepository( taskId , userId.id)
 
-        res.status(201).send(isCompleted)
+        res.status(200).send(isCompleted)
     } catch (error) {
         res.status(400).send(error)
     }
@@ -89,6 +89,6 @@ export async function deleteTask(req: Request, res: Response){
 
         res.status(200).send("deletado com sucesso")
     } catch (error) {
-        res.status(400).send(error)
+        res.status(500).send(error)
     }
 }
