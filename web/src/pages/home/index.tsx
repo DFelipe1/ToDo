@@ -36,9 +36,7 @@ export function Home() {
     
     const { token } = JSON.parse(localStorage.getItem("ToDo-App") || "{}")
 
-    if(!token){
-        navigate("/")
-    }
+    
 
     async function getDataUser(){
 
@@ -56,7 +54,9 @@ export function Home() {
         setTasks(data)
     }
     useEffect(() => {
-
+        if(!token){
+            navigate("/login")
+        }
         getDataUser()
         getTasks()
     })
